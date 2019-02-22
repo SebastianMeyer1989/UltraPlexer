@@ -1,4 +1,6 @@
 # UltraPlexer
+
+
 ## Introduction
 Sequencing by Oxford Nanopore technology is not only relative expensive, but also limited to a multiplex of 24 isolates, due t available barcodes.
 
@@ -14,35 +16,35 @@ To increasse the number of isolates that can be sequence simultaniously and ther
 
 ## Programmcalls
 
-**Classification:**
+**1. Classify long-reads:**
 ```
 perl multiplexer.pl --prefix prefix1 --action classify --samples_file /path/to/samplefile/samplefile1.txt --longReads_FASTQ /path/to/longreads/longreads1.fastq
 ```
-**Generate classified output:**
+**2. Generate human-readable classified output from classification file:**
 ```
 perl multiplexer.pl --prefix prefix1 --action generateCallFile --samples_file /path/to/samplefile/samplefile1.txt
 ```
-**Generate random output:**
+**3. Generate human-readable random output from classification file (as a comparison):**
 ```
 perl multiplexer.pl --prefix prefix1 --action generateCallFile --samples_file /path/to/samplefile/samplefile1.txt --classificationSource random
 ```
 
-## Explanation
-
-Programcall 1 (classification) starts the classifying itself.
-
-Programcall 2 (generate classified output) creates a human readable output file from the classified data, containing a list of the by UltraPlexer classified reads.
-
-Programcall 3 (generate random output) creates a human readable output file from the classified data, containing a list of random classified reads (by the option “--classificationSource random”).
-
 
 ## Input
 
-**multiplexer.pl**
+**perl multiplexer.pl**
 
-The programm itself
+The programm itself, called by perl.
 
-**samplefile1.txt**
+**--prefix prefix1**
+
+THe Name for the UltraPlexer-run.
+
+**--action classify / generateCallFile**
+
+The command to classify the long-reads (classify) or to generate an output file from the classified data (generateCallFile).
+
+**--samples_file /path/to/samplefile/samplefile1.txt**
 
 A file containing the isolate ID, the pathway to the illumina_R1.fastq file and the pathway to the illumina_R2.fastq file. One line per isolate. The three infos seperated by tabs.
 
@@ -55,9 +57,13 @@ Benjamin	/Data/Benjamin_R1.fastq	        /Data/Benjamin_R2.fastq
 …
 ```
 
-**longreads1.fastq**
+**--longReads_FASTQ /path/to/longreads/longreads1.fastq**
 
 A file containing all long-reads from isolates in the “samplefile1.txt” that should be classified in standard fastq format.
+
+**--classificationSource random**
+
+The command to randomly distribute the long-reads, instead of classifying them.
 
 
 ## Output
