@@ -38,7 +38,7 @@ The programm itself, called by perl.
 
 **--prefix prefix1**
 
-THe Name for the UltraPlexer-run.
+Your chosen name for the UltraPlexer-run.
 
 **--action classify / generateCallFile**
 
