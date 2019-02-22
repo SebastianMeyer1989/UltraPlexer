@@ -2,20 +2,21 @@
 
 
 ## Introduction
-Sequencing by Oxford Nanopore technology is not only relative expensive, but also limited to a multiplex of 24 isolates, due t available barcodes.
 
-To increasse the number of isolates that can be sequence simultaniously and thereby decreasing the per isolate sequencing costs we developed the UltraPlexer. A tool that matches non-barcoded long-read data of Oxford Nanopore Technologies to barcoded short-tead data of Illumina Technologies, based on k-mer frequencies, and assigns them to the matching isolates. The classifying algorithm has an error-rate of nearly 0% for a multi-species sequencing-run and an error-rate of below 1% for a multi-strain sequencing-run.
+UltraPlexing is a highly effective method for multiplexed long-read sequencing in the context of hybrid microbial genome assembly. Ultraplexing removes the need for molecular barcodes and assigns each long read to the short-read assembly graph it is most compatible with. While maintaining excellent assembly quality, Ultraplexing enables at least a doubling of the maximum number of samples per flow cell on the Nanopore platform, and a reduction in reagent costs and hands-on-time by a factor of 2.
 
+To apply the UltraPlexing approach, simply pool equal amounts of DNA from the samples you want to multiplex, generate long-read sequencing data, and use the UltraPlexing algorithm to demultiplex the data. In order to apply UltraPlexing, short-read sequencing data for the same samples needs to be available at the time of analysis. If possible, optimize the DNA extration and library preparation processes for read length, as the ability of the UltraPlexing algorithm to assign long reads to isolates improves with increasing read lengths.
 
-## Programm Requirements and Installation
-**The following softwares need to be installed:**
+A preprint with accuracy evaluations will be made available soon.
+
+## Program Requirements and Installation
+**The following programming languages and packages need to be installed:**
 
 - Perl
 - R
-- Cortex
+- (cortex_var)[http://cortexassembler.sourceforge.net/index_cortex_var.html]
 
-At the moment the pathways to cortex still need to beintegrated manually into the UltraPlexer script, before running (UltraPlexer.pl, line 1412-1420). 
-
+At the moment, `UltraPlexer.pl` (lines 1412-1420) contains hard-coded paths to Cortex binaries - modify these accordingly. 
 
 ## Running the UltraPlexer
 
@@ -32,24 +33,23 @@ perl multiplexer.pl --prefix prefix1 --action generateCallFile --samples_file /p
 perl multiplexer.pl --prefix prefix1 --action generateCallFile --samples_file /path/to/samplefile/samplefile1.txt --classificationSource random
 ```
 
-
 ## Input
 
 **perl multiplexer.pl**
 
-The programm itself, called by perl.
+The UltraPlexing algorithm.
 
 **--prefix prefix1**
 
-Your chosen name for the UltraPlexer-run.
+Your chosen prefix for the UltraPlexer run.
 
 **--action classify / generateCallFile**
 
-The command to classify the long-reads (classify) or to generate an output file from the classified data (generateCallFile).
+The command to classify the long-reads (`classify`) or to generate an output file from the classified data (`generateCallFile`).
 
 **--samples_file /path/to/samplefile/samplefile1.txt**
 
-A file containing the isolate ID, the pathway to the illumina_R1.fastq file and the pathway to the illumina_R2.fastq file. One line per isolate. The three infos seperated by tabs.
+A tab-separated file containing the isolate ID, the path to the illumina_R1.fastq file, and the path to the illumina_R2.fastq file. One line per isolate.
 
 Example:
 ```
@@ -62,26 +62,27 @@ Benjamin	/Data/Benjamin_R1.fastq	        /Data/Benjamin_R2.fastq
 
 **--longReads_FASTQ /path/to/longreads/longreads1.fastq**
 
-A file containing all long-reads from isolates in the “samplefile1.txt” that should be classified in standard fastq format.
+A FASTQ file containing the long reads to be classified.
 
 **--classificationSource random**
 
-The command to randomly distribute the long-reads, instead of classifying them.
-
+The command to generate a random assignment of long reads to isolates (useful for benchmarking).
 
 ## Output
 
+(for prefix `mixed_bacteria_10x`):
+
 **mixed_bacteria_10x.classification_k19.done**
 
-This file is produced, when the UltraPlexer finished running correctly.
+This flag file is produced when the UltraPlexer finished running correctly.
 
 **mixed_bacteria_10x.classification_k19**
 
-This file is produced by the first programmcall and contains all data produced while classifying the long-reads.
+This file is produced by the `classify` command and contains intermediate read classification data.
 
 **mixed_bacteria_10x.classification_k19.called_kmers**
 
-This file produces by the second programmcall contains the header information of the classified reads, the ID of the isolate the read is assigned to and the propability (?) for the by UltraPlexer classified reads. Onel ine per read. The three infos seperated by tabs.
+This file is produced by the `generateCallFile` command and contains, for each read, the isolate it has been assigned to, and a quality metric.
 
 Example: 
 ```
@@ -94,13 +95,4 @@ Read_4100	Isolate_1	0.912532884787109
 
 **mixed_bacteria_10x.classification_k19.called_random**
 
-This file produces by the third programmcall contains the header information of the classified reads, the ID of the isolate the read is assigned to and the propability (?) for the random classified reads. Onel ine per read. The three infos seperated by tabs.
-
-Example: 
-```
-Read_1          Benjamin	0.886902934417435
-Read_332	Isolate_17	0.906668691485839
-Read_336	Isolate 17 	0.895056000007794
-Read_4100	MRSA_H4         0.912532884787109
-…
-```
+This file is produced when specifying the `--classificationSource random` option. It contains a random allocation of reads to isolates.
