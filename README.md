@@ -14,7 +14,7 @@ To increasse the number of isolates that can be sequence simultaniously and ther
 - ?
 
 
-## Programmcalls
+## Running the UltraPlexer
 
 **1. Classify long-reads:**
 ```
