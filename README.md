@@ -14,7 +14,7 @@ A preprint with accuracy evaluations will be made available soon.
 
 - Perl
 - R
-- (cortex_var)[http://cortexassembler.sourceforge.net/index_cortex_var.html]
+- [cortex_var](http://cortexassembler.sourceforge.net/index_cortex_var.html)
 
 At the moment, `UltraPlexer.pl` (lines 1412-1420) contains hard-coded paths to Cortex binaries - modify these accordingly. 
 
