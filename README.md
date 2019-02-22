@@ -7,11 +7,14 @@ Sequencing by Oxford Nanopore technology is not only relative expensive, but als
 To increasse the number of isolates that can be sequence simultaniously and thereby decreasing the per isolate sequencing costs we developed the UltraPlexer. A tool that matches non-barcoded long-read data of Oxford Nanopore Technologies to barcoded short-tead data of Illumina Technologies, based on k-mer frequencies, and assigns them to the matching isolates. The classifying algorithm has an error-rate of nearly 0% for a multi-species sequencing-run and an error-rate of below 1% for a multi-strain sequencing-run.
 
 
-## Programm Requirements
+## Programm Requirements and Installation
+**The following softwares need to be installed:**
 
 - Perl
 - R
-- ?
+- Cortex
+
+At the moment the pathways to cortex still need to beintegrated manually into the UltraPlexer script, before running (UltraPlexer.pl, line 1412-1420). 
 
 
 ## Running the UltraPlexer
