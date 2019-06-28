@@ -386,7 +386,7 @@ elsif($action eq 'evaluate')
 		{
 			die unless(exists $read_mapping_truth_href->{$readID});
 			die unless(exists $read_simulationOrBarcodes_href->{$readID});
-			my @truth_samples = keys {%{$read_simulationOrBarcodes_href->{$readID}}};
+			my @truth_samples = keys %{$read_simulationOrBarcodes_href->{$readID}};
 			die unless(scalar(@truth_samples) == 1);
 			my $truth_sample = $truth_samples[0];
 			my $assignment = $readClassification_calls{$classificationSource}{$readID}; die unless(defined $assignment);
