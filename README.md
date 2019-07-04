@@ -16,7 +16,7 @@ A preprint with accuracy evaluations will be made available soon.
 - R
 - [cortex_var](http://cortexassembler.sourceforge.net/index_cortex_var.html)
 
-At the moment, `UltraPlexer.pl` (lines 1412-1420) contains hard-coded paths to Cortex binaries - modify these accordingly. 
+Please modify `UltraPlexer.pl` so that it contains the correct path to your installation of Cortex (line 16). The algorithm expects to find Cortex binaries for k = 31 with 20, 40 and 60 colors.
 
 ## Running the UltraPlexer
 

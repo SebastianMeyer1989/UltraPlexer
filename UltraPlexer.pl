@@ -9,8 +9,22 @@ use lib "$FindBin::Bin/perlLib";
 use Cwd qw/getcwd abs_path/;
 use Math::GSL::Randist qw/gsl_ran_binomial_pdf/;
 
-$| = 1;
 
+##########################################################################
+# MODIFY the following path to the Cortex directory - this script expects to
+# find binaries compiled for 20, 40 and 60 colors.
+my $cortex_bin_dir = '/gpfs/project/dilthey/software/CORTEX_release_v1.0.5.21/bin/';
+##########################################################################
+
+foreach my $colors (20, 40, 60)
+{
+	my $bin_fn = "${cortex_bin_dir}/cortex_var_31_c${colors}";
+	die "Expected Cortex binary for $colors colors not found in directory $cortex_bin_dir - if necessary, modify this script so that the \$cortex_bin_dir variable points to right directory. Expected filename: $bin_fn" unless(-e $bin_fn);
+}
+
+$| = 1; 
+
+# Debugging commands - ignore:
 # die Dumper(observed_intersection_to_identity(16, 100, 99), 2, observed_intersection_to_identity_2(16, 100, 99));
 # die observed_kmer_intersection_likelihood(16, 100, 0.90, 80);
 
@@ -40,6 +54,8 @@ GetOptions (
 	'longReads_FASTQ:s' => \$longReads_FASTQ,
 );
 
+die "Please use --k <= 31" unless($k <= 31);
+
 unless(-d $cortex_temp_dir)
 {
 	mkdir($cortex_temp_dir) or die "Cannot mkdir $cortex_temp_dir (you can specify a custom directory via --cortex_temp_dir)";
@@ -64,7 +80,7 @@ if($action eq 'classifyTestData')
 		die "File $fn_output_OK already existing - exit now, delete file if you want to redo.";
 	}
 	
-	# die unless(-e $cortex_bin);
+	# die unless(-e $cortex_bin);^^
 	die unless(-e $cortex_temp_dir);
 
 	# build Cortex graphs and determine thresholds
@@ -148,7 +164,7 @@ elsif($action eq 'classify')
 		chomp($line);
 		next unless($line);
 		my @line_fields = split(/\t/, $line);
-		die unless(scalar(@line_fields) == 3);
+		die "Error - line $. in file $samples_file does not have three tab-delimited fields" unless(scalar(@line_fields) == 3);
 		my $sampleID = $line_fields[0];
 		die "Sample IDs in $samples_file contain whitespaces -- can't deal with this. Offending example: $sampleID" if($sampleID =~ /\s/);
 		die if($_ilmn_unique{$line_fields[1]});
@@ -885,7 +901,7 @@ sub classifyLongReads
 	fastq_to_fasta($FASTQ_longReads, $FASTA_longReads);
 	
 	my $fn_reads_list = $cortex_temp_dir . '/readsList_' . $prefix . '_' . $k;
-	open(RLIST, '>', $fn_reads_list) or die "Cannot open $fn_binaries_list";
+	open(RLIST, '>', $fn_reads_list) or die "Cannot open $fn_reads_list";
 	print RLIST abs_path($FASTA_longReads), "\n";
 	close(RLIST);
 	
@@ -915,6 +931,7 @@ sub classifyLongReads
 			$thisFile_reads{$readID}++;
 			
 			my $debug = 0;
+			# the following conditional catches sporadic mis-formatted lines (produced by Cortex)
 			if(scalar(@currentReadLines) == scalar(@$sampleIDs_aref))
 			{
 				print "Classifying read $readID\n" if($debug);
@@ -1409,15 +1426,15 @@ sub get_cortex_bin_by_nColours
 	die unless(defined $ncolours);
 	if($ncolours <= 20)
 	{
-		return '/gpfs/project/dilthey/software/CORTEX_release_v1.0.5.21/bin/cortex_var_31_c20';
+		return "${cortex_bin_dir}/cortex_var_31_c20";
 	}
 	elsif($ncolours <= 40)
 	{
-		return '/gpfs/project/dilthey/software/CORTEX_release_v1.0.5.21/bin/cortex_var_31_c40';
+		return "${cortex_bin_dir}/cortex_var_31_c40";
 	}
 	elsif($ncolours <= 60)
 	{
-		return '/gpfs/project/dilthey/software/CORTEX_release_v1.0.5.21/bin/cortex_var_31_c60';
+		return "${cortex_bin_dir}/cortex_var_31_c60";
 	}	
 	else
 	{
