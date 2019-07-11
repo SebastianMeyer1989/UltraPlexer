@@ -1,0 +1,3 @@
+Plasmid1.fna
+Plasmid2.fna
+Plasmid3.fna
