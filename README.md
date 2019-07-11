@@ -149,6 +149,8 @@ After downloading the Folder "Example1" you just need to switch to it via termin
 ```
 perl simulation_pipeline.pl example1_list_of_plasmids.txt 8500 150
 ```
+Important: Pathways for pbsim, pbsim qc-model and wgsim need to be replaced in the script "simulation_pipeline.pl" (line 10-12) to fit your installations, before running it.
+
 #### Input:
 - Genome files to simulate reads from
 - List with the filenames of these genomes (example1_list_of_plasmids.txt)
