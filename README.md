@@ -152,17 +152,18 @@ perl simulation_pipeline.pl example1_list_of_plasmids.txt 8500 150
 - List with the filenames of these genomes (example1_list_of_plasmids.txt)
 - Desired mean read length of the long reads (8500)
 - Desired coverage of the long reads (150)
+
 Important: Please keep these numerical parameters for the example run as they are, since the scripts are still hard-coded at the moment for this mean lengh and coverage.
 
 #### Output:
-- A new folder (Sim_Pipeline) containing:
-	Folder with data for each simulated genome (Plasmid1_l8500_c150 for example)
-	File with genomes files, the program could not find (missing_files.log)
-	File with the used simulation parameters (simulation_parameters.log)
+- A new folder (Sim_Pipeline) containing
+  - Folder with data for each simulated genome (Plasmid1_l8500_c150 for example)
+  - File with genomes files, the program could not find (missing_files.log)
+  - File with the used simulation parameters (simulation_parameters.log)
 - The final simulated reads are found in the files containing the tag “filtered”. For the genome “Plasmid1” they would be called:
-	“Plasmid1_l8500_c150-filtered_R1.fastq” (Illumina R1 short-reads)
-	“Plasmid1_l8500_c150-filtered_R1.fastq” (Illumina R2 short-reads)
-	“Plasmid1_l8500_c150-filtered_complete.fastq” (Nanopore long-reads)
+  - “Plasmid1_l8500_c150-filtered_R1.fastq” (Illumina R1 short-reads)
+  - “Plasmid1_l8500_c150-filtered_R1.fastq” (Illumina R2 short-reads)
+  - “Plasmid1_l8500_c150-filtered_complete.fastq” (Nanopore long-reads)
 
 ### 2. Creating a shuffled long-read pool (1s runtime, 1 CPUs, <1gb used memory)
 
@@ -240,8 +241,8 @@ perl create_kmer_based_fastq_for_simulations.pl example1_plasmid.classification_
 
 #### Output:
 - Two fastq-files for each simulated genome:
-	Predicted reads for the genome a the file, ending with “...predicted_reads.fastq”.
-	True reads for the genome a the file, ending with “...true_reads.fastq”. These are the reads, 	that were originally simulated for the genome.
+  - Predicted reads for the genome a the file, ending with “...predicted_reads.fastq”.
+  - True reads for the genome a the file, ending with “...true_reads.fastq”. These are the reads, that were originally simulated for the genome.
 
 ### 6. Hybrid assembly (1-2h runtime per assembly, 2 CPUs, <2gb used memory)
 
@@ -270,13 +271,14 @@ perl create_kmer_based_fastq_for_simulations.pl example1_plasmid.classification_
 - Path to the Illumina R2 read file (Sim_Pipeline/Plasmid1_l8500_c150/Plasmid1_l8500_c150-filtered_R2.fastq)
 - Path to the long-read file (example1_plasmid-Plasmid1-predicted_reads.fastq)
 - Prefix for the output folder (example1_plasmid-Plasmid1-predicted_reads_unicycler)
-Important: Pathways for unicycler, spades, racon and oilon need to be replaced to fit your installations.
+
+Important: Pathways for unicycler, spades, racon and pilon need to be replaced to fit your installations.
 
 #### Output:
 - Assembly-folder for each assembled genome, for example called “example1_plasmid-Plasmid1-predicted_reads_unicycler”, containing:
-	De-bruijn (Bandage) graphs for all assembly steps (“001_best_spades_graph.gfa” to 	“007_rotated.gfa” and “assembly.gfa”).
-	Assembly file in fasta format (assembly.fasta)
-	Log file with parameters of the assembly run (unicycler.log)
+  - De-bruijn (Bandage) graphs for all assembly steps (“001_best_spades_graph.gfa” to “007_rotated.gfa” and “assembly.gfa”).
+  - Assembly file in fasta format (assembly.fasta)
+  - Log file with parameters of the assembly run (unicycler.log)
 
 ### 7. Comparing assemblies of true and predicted reads using nucmer (<1s runtime, 1 CPUs, <1gb used memory)
 
