@@ -136,6 +136,8 @@ The nessecary data can be found in the folder “Example1”:
 - A list of these three fasta files (example1_list_of_plasmids.txt)
 - Different scripts (.pl and .R), needed to run the whole pipeline
 
+After downloading the Folder "Example1" you just need to switch to it via terminal and call the necessary commands in the further  explained order (assumed, that all the requirements are met).
+
 ### 1. Simulation (59s runtime, 1 CPUs, <1gb used memory)
 
 #### Requirements:
