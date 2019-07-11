@@ -70,7 +70,7 @@ The command to generate a random assignment of long reads to isolates (useful fo
 
 ## Output
 
-(for prefix `mixed_bacteria_10x`):
+(examplary for prefix `mixed_bacteria_10x`):
 
 **mixed_bacteria_10x.classification_k19.done**
 
@@ -99,7 +99,7 @@ This file is produced when specifying the `--classificationSource random` option
 
 ## Creating fastq-files for further hybrid assemblies
 
-(for prefix `mixed_bacteria_10x`)
+(exemplary for prefix `mixed_bacteria_10x`)
  
 ### Call:
 ```
@@ -247,10 +247,12 @@ perl create_kmer_based_fastq_for_simulations.pl example1_plasmid.classification_
 
 #### Output:
 - Two fastq-files for each simulated genome:
-  - Predicted reads for the genome a the file, ending with “...predicted_reads.fastq”.
-  - True reads for the genome a the file, ending with “...true_reads.fastq”. These are the reads, that were originally simulated for the genome.
+  - Predicted reads for the genome in a file, ending with “...predicted_reads.fastq”.
+  - True reads for the genome in a file, ending with “...true_reads.fastq”. These are the reads, that were originally simulated for the genome.
 
 ### 6. Hybrid assembly (1-2h runtime per assembly, 2 CPUs, <2gb used memory)
+
+(examplary for predicted reads for `Plasmid1`)
 
 #### Requirements:
 - perl
@@ -263,7 +265,7 @@ perl create_kmer_based_fastq_for_simulations.pl example1_plasmid.classification_
 - SamTools
 - BLASTp
 
-#### Call (example for predicted reads for Plasmid1):
+#### Call:
 ```
 /gpfs/project/dilthey/software/Unicycler/unicycler-runner.py --spades_path /software/SPAdes/3.11.1/ivybridge/bin/spades.py --racon_path /gpfs/project/dilthey/software/racon/bin/racon --pilon_path /software/pilon/1.22/pilon-1.22.jar -t 2 -1 Sim_Pipeline/Plasmid1_l8500_c150/Plasmid1_l8500_c150-filtered_R1.fastq -2 Sim_Pipeline/Plasmid1_l8500_c150/Plasmid1_l8500_c150-filtered_R2.fastq -l example1_plasmid-Plasmid1-predicted_reads.fastq -o example1_plasmid-Plasmid1-predicted_reads_unicycler
 ```
@@ -288,11 +290,13 @@ Important: Pathways for unicycler, spades, racon and pilon need to be replaced t
 
 ### 7. Comparing assemblies of true and predicted reads using nucmer (1s runtime, 1 CPUs, <1gb used memory)
 
+(examplary for `Plasmid1`)
+
 #### Requirements:
 - nucmer
 - delta-filter
 
-#### Calls (example for Plasmid1):
+#### Calls:
 1.
 ```
 nucmer -p Plasmid1 example1_plasmid-Plasmid1-predicted_reads_unicycler/assembly.fasta example1_plasmid-Plasmid1-true_reads_unicycler/assembly.fasta
