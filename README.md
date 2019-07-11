@@ -97,8 +97,10 @@ Read_4100	Isolate_1	0.912532884787109
 
 This file is produced when specifying the `--classificationSource random` option. It contains a random allocation of reads to isolates.
 
-## Creating fastq-files for further hybrid assemblies (for prefix mixed_bacteria_10x)
+## Creating fastq-files for further hybrid assemblies
 
+(for prefix `mixed_bacteria_10x`)
+ 
 ### Call:
 ```
 perl create_kmer_based_fastq_for_real_data.pl mixed_bacteria_10x.classification_k19.called_kmers path/to/longreads/longreads1.fastq  mixed_bacteria_10x
