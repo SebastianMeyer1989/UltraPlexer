@@ -280,7 +280,7 @@ Important: Pathways for unicycler, spades, racon and pilon need to be replaced t
   - Assembly file in fasta format (assembly.fasta)
   - Log file with parameters of the assembly run (unicycler.log)
 
-### 7. Comparing assemblies of true and predicted reads using nucmer (<1s runtime, 1 CPUs, <1gb used memory)
+### 7. Comparing assemblies of true and predicted reads using nucmer (1s runtime, 1 CPUs, <1gb used memory)
 
 #### Requirements:
 - nucmer
