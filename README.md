@@ -261,6 +261,8 @@ perl create_kmer_based_fastq_for_simulations.pl example1_plasmid.classification_
 ```
 /gpfs/project/dilthey/software/Unicycler/unicycler-runner.py --spades_path /software/SPAdes/3.11.1/ivybridge/bin/spades.py --racon_path /gpfs/project/dilthey/software/racon/bin/racon --pilon_path /software/pilon/1.22/pilon-1.22.jar -t 2 -1 Sim_Pipeline/Plasmid1_l8500_c150/Plasmid1_l8500_c150-filtered_R1.fastq -2 Sim_Pipeline/Plasmid1_l8500_c150/Plasmid1_l8500_c150-filtered_R2.fastq -l example1_plasmid-Plasmid1-predicted_reads.fastq -o example1_plasmid-Plasmid1-predicted_reads_unicycler
 ```
+Important: Pathways for unicycler, spades, racon and pilon need to be replaced to fit your installations.
+
 #### Input:
 - Path to Unicycler (/gpfs/project/dilthey/software/Unicycler/unicycler-runner.py)
 - Path to SPAdes (/software/SPAdes/3.11.1/ivybridge/bin/spades.py)
@@ -271,8 +273,6 @@ perl create_kmer_based_fastq_for_simulations.pl example1_plasmid.classification_
 - Path to the Illumina R2 read file (Sim_Pipeline/Plasmid1_l8500_c150/Plasmid1_l8500_c150-filtered_R2.fastq)
 - Path to the long-read file (example1_plasmid-Plasmid1-predicted_reads.fastq)
 - Prefix for the output folder (example1_plasmid-Plasmid1-predicted_reads_unicycler)
-
-Important: Pathways for unicycler, spades, racon and pilon need to be replaced to fit your installations.
 
 #### Output:
 - Assembly-folder for each assembled genome, for example called “example1_plasmid-Plasmid1-predicted_reads_unicycler”, containing:
