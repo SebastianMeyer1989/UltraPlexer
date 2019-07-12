@@ -288,7 +288,33 @@ Important: Pathways for unicycler, spades, racon and pilon need to be replaced t
   - Assembly file in fasta format (assembly.fasta)
   - Log file with parameters of the assembly run (unicycler.log)
 
-### 7. Comparing assemblies of true and predicted reads using nucmer (1s runtime, 1 CPUs, <1gb used memory)
+### 7. Comparing true and predicted reads (1s runtime, 1 CPUs, <1gb used memory)
+
+(examplary for `Plasmid1`)
+
+#### Requirements:
+- perl
+
+#### Call:
+```
+perl parse_calling_tbl.pl  example1_plasmid.classification_k19.called_kmers
+```
+#### Input:
+- Tab separated assignment table (example1_plasmid.classification_k19.called_kmers)
+
+#### Output:
+- File containing primary stats (example1_plasmid.classification_k19.called_kmers.stats). These are not necessarily important for you.
+- File containing final stats (example1_plasmid.classification_k19.called_kmers.stats2). This file shows the name of the used calling table and the number and ratio of correct called reads in total (first line) and the number of falsly and correctly called reads for every used genome (following lines).
+##### Example:
+```
+example1_plasmid.classification_k19.called_kmers Summary		Correct_Reads:	1147	False_Reads:	47	Ratio_Correct_Reads:	0.960636515912898
+Plasmid1	false: 4		Plasmid1	true: 394
+Plasmid2	false: 16		Plasmid2	true: 382
+Plasmid3	false: 27		Plasmid3	true: 371
+```
+Here you can see, that over 96% of the simulated reads were assigned correctly. The missing <4% are miss-assignments due to sequence homology, or do not really affect hybrid assemblies (as we found out in our experiments).
+
+### 8. Comparing assemblies of true and predicted reads using nucmer (1s runtime, 1 CPUs, <1gb used memory)
 
 (examplary for `Plasmid1`)
 
