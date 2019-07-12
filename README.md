@@ -140,7 +140,6 @@ The nessecary data can be found in the folder “Example1”:
 
 After downloading the Folder "Example1" you just need to switch to it via terminal and call the necessary commands in the further  explained order (assumed, that all the requirements are met).
 
-### 1. Simulation (59s runtime, 1 CPUs, <1gb used memory)
 
 If you don't want to simulate data or the simulation is just not possible on your device, you can skip Step 1 and 2 (simulation and creation of the long-read pool) and use the long-read pool and other needed data we provided.
 Therefor you need to download the zip-file "`Example1_simulated_example_data.zip`" from
@@ -148,6 +147,8 @@ Therefor you need to download the zip-file "`Example1_simulated_example_data.zip
 https://uni-duesseldorf.sciebo.de/s/oHFl3FCArhPhHb5
 
 and copy the content of the unzipped Folder "`Example1_simulated_example_data`" (Sim_Pipeline, example1_plasmid_ids_and_pathways.txt, example1_plasmid_read_pool.fastq and example1_plasmid_stats.txt) into your Folder "`Example1`" and continue the pipeline from step 3. "Ultraplexing:...".
+
+### 1. Simulation (59s runtime, 1 CPUs, <1gb used memory)
 
 #### Requirements:
 - perl
