@@ -1,0 +1,6 @@
+List of All Genomes:		example1_list_of_plasmids.txt
+IDs And Pathways:		example1_plasmid_ids_and_pathways.txt
+Read Pool:			example1_plasmid_read_pool.txt
+Number Of Chosen Genomes:	3
+Total Size:			10000000
+Number Of Reads Per Genome:	398

@@ -1,0 +1,130 @@
+
+____________________________________________________________________________________________________
+Pipeline Parameters: 4.7.2019, 13:43:3
+____________________________________________________________________________________________________
+
+Output Pathway:	Sim_Pipeline/[FILE]/
+Simulated Reads:	[FILE]_0001.fastq or .maf or .ref (PacBio), [FILE]_R1.fastq or R2 (Illumina)
+Filtered Reads:	[FILE]-filtered_0001.fastq or .maf or .ref (PacBio), [FILE]-filtered_R1.fastq & [FILE]-filtered_R2.fastq or R2 (Illumina)
+| | File: Plasmid1_l8500_c20 | |
+/gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/src/pbsim --prefix Sim_Pipeline/Plasmid1_l8500_c20/Plasmid1_l8500_c20 --depth 20 --length-mean 8500 --length-sd 6516.61 --length-max 63750 --length-min 230  --accuracy-mean 0.88 --model_qc /gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/data/model_qc_clr Sim_Pipeline/Plasmid1_l8500_c20/Plasmid1_l8500_c20-extended.fna
+/gpfs/project/dilthey/software/wgsim/wgsim -e 0.005 -1 150 -2 150 -d 278 -s 128 -r 0 -R 0 Sim_Pipeline/Plasmid1_l8500_c20/Plasmid1_l8500_c20-extended.fna Sim_Pipeline/Plasmid1_l8500_c20/Plasmid1_l8500_c20_R1.fastq Sim_Pipeline/Plasmid1_l8500_c20/Plasmid1_l8500_c20_R2.fastq
+| | File: Plasmid2_l8500_c20 | |
+/gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/src/pbsim --prefix Sim_Pipeline/Plasmid2_l8500_c20/Plasmid2_l8500_c20 --depth 20 --length-mean 8500 --length-sd 6516.61 --length-max 63750 --length-min 230  --accuracy-mean 0.88 --model_qc /gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/data/model_qc_clr Sim_Pipeline/Plasmid2_l8500_c20/Plasmid2_l8500_c20-extended.fna
+/gpfs/project/dilthey/software/wgsim/wgsim -e 0.005 -1 150 -2 150 -d 278 -s 128 -r 0 -R 0 Sim_Pipeline/Plasmid2_l8500_c20/Plasmid2_l8500_c20-extended.fna Sim_Pipeline/Plasmid2_l8500_c20/Plasmid2_l8500_c20_R1.fastq Sim_Pipeline/Plasmid2_l8500_c20/Plasmid2_l8500_c20_R2.fastq
+| | File: Plasmid3_l8500_c20 | |
+/gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/src/pbsim --prefix Sim_Pipeline/Plasmid3_l8500_c20/Plasmid3_l8500_c20 --depth 20 --length-mean 8500 --length-sd 6516.61 --length-max 63750 --length-min 230  --accuracy-mean 0.88 --model_qc /gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/data/model_qc_clr Sim_Pipeline/Plasmid3_l8500_c20/Plasmid3_l8500_c20-extended.fna
+/gpfs/project/dilthey/software/wgsim/wgsim -e 0.005 -1 150 -2 150 -d 278 -s 128 -r 0 -R 0 Sim_Pipeline/Plasmid3_l8500_c20/Plasmid3_l8500_c20-extended.fna Sim_Pipeline/Plasmid3_l8500_c20/Plasmid3_l8500_c20_R1.fastq Sim_Pipeline/Plasmid3_l8500_c20/Plasmid3_l8500_c20_R2.fastq
+
+____________________________________________________________________________________________________
+Pipeline Parameters: 4.7.2019, 13:43:51
+____________________________________________________________________________________________________
+
+Output Pathway:	Sim_Pipeline/[FILE]/
+Simulated Reads:	[FILE]_0001.fastq or .maf or .ref (PacBio), [FILE]_R1.fastq or R2 (Illumina)
+Filtered Reads:	[FILE]-filtered_0001.fastq or .maf or .ref (PacBio), [FILE]-filtered_R1.fastq & [FILE]-filtered_R2.fastq or R2 (Illumina)
+| | File: Plasmid1_l8500_c20 | |
+/gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/src/pbsim --prefix Sim_Pipeline/Plasmid1_l8500_c20/Plasmid1_l8500_c20 --depth 20 --length-mean 8500 --length-sd 6516.61 --length-max 63750 --length-min 230  --accuracy-mean 0.88 --model_qc /gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/data/model_qc_clr Sim_Pipeline/Plasmid1_l8500_c20/Plasmid1_l8500_c20-extended.fna
+/gpfs/project/dilthey/software/wgsim/wgsim -e 0.005 -1 150 -2 150 -d 278 -s 128 -r 0 -R 0 Sim_Pipeline/Plasmid1_l8500_c20/Plasmid1_l8500_c20-extended.fna Sim_Pipeline/Plasmid1_l8500_c20/Plasmid1_l8500_c20_R1.fastq Sim_Pipeline/Plasmid1_l8500_c20/Plasmid1_l8500_c20_R2.fastq
+| | File: Plasmid2_l8500_c20 | |
+/gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/src/pbsim --prefix Sim_Pipeline/Plasmid2_l8500_c20/Plasmid2_l8500_c20 --depth 20 --length-mean 8500 --length-sd 6516.61 --length-max 63750 --length-min 230  --accuracy-mean 0.88 --model_qc /gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/data/model_qc_clr Sim_Pipeline/Plasmid2_l8500_c20/Plasmid2_l8500_c20-extended.fna
+/gpfs/project/dilthey/software/wgsim/wgsim -e 0.005 -1 150 -2 150 -d 278 -s 128 -r 0 -R 0 Sim_Pipeline/Plasmid2_l8500_c20/Plasmid2_l8500_c20-extended.fna Sim_Pipeline/Plasmid2_l8500_c20/Plasmid2_l8500_c20_R1.fastq Sim_Pipeline/Plasmid2_l8500_c20/Plasmid2_l8500_c20_R2.fastq
+| | File: Plasmid3_l8500_c20 | |
+/gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/src/pbsim --prefix Sim_Pipeline/Plasmid3_l8500_c20/Plasmid3_l8500_c20 --depth 20 --length-mean 8500 --length-sd 6516.61 --length-max 63750 --length-min 230  --accuracy-mean 0.88 --model_qc /gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/data/model_qc_clr Sim_Pipeline/Plasmid3_l8500_c20/Plasmid3_l8500_c20-extended.fna
+/gpfs/project/dilthey/software/wgsim/wgsim -e 0.005 -1 150 -2 150 -d 278 -s 128 -r 0 -R 0 Sim_Pipeline/Plasmid3_l8500_c20/Plasmid3_l8500_c20-extended.fna Sim_Pipeline/Plasmid3_l8500_c20/Plasmid3_l8500_c20_R1.fastq Sim_Pipeline/Plasmid3_l8500_c20/Plasmid3_l8500_c20_R2.fastq
+
+____________________________________________________________________________________________________
+Pipeline Parameters: 4.7.2019, 13:51:5
+____________________________________________________________________________________________________
+
+Output Pathway:	Sim_Pipeline/[FILE]/
+Simulated Reads:	[FILE]_0001.fastq or .maf or .ref (PacBio), [FILE]_R1.fastq or R2 (Illumina)
+Filtered Reads:	[FILE]-filtered_0001.fastq or .maf or .ref (PacBio), [FILE]-filtered_R1.fastq & [FILE]-filtered_R2.fastq or R2 (Illumina)
+| | File: Plasmid1_l8500_c100 | |
+/gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/src/pbsim --prefix Sim_Pipeline/Plasmid1_l8500_c100/Plasmid1_l8500_c100 --depth 100 --length-mean 8500 --length-sd 6516.61 --length-max 63750 --length-min 230  --accuracy-mean 0.88 --model_qc /gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/data/model_qc_clr Sim_Pipeline/Plasmid1_l8500_c100/Plasmid1_l8500_c100-extended.fna
+/gpfs/project/dilthey/software/wgsim/wgsim -e 0.005 -1 150 -2 150 -d 278 -s 128 -r 0 -R 0 Sim_Pipeline/Plasmid1_l8500_c100/Plasmid1_l8500_c100-extended.fna Sim_Pipeline/Plasmid1_l8500_c100/Plasmid1_l8500_c100_R1.fastq Sim_Pipeline/Plasmid1_l8500_c100/Plasmid1_l8500_c100_R2.fastq
+| | File: Plasmid2_l8500_c100 | |
+/gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/src/pbsim --prefix Sim_Pipeline/Plasmid2_l8500_c100/Plasmid2_l8500_c100 --depth 100 --length-mean 8500 --length-sd 6516.61 --length-max 63750 --length-min 230  --accuracy-mean 0.88 --model_qc /gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/data/model_qc_clr Sim_Pipeline/Plasmid2_l8500_c100/Plasmid2_l8500_c100-extended.fna
+/gpfs/project/dilthey/software/wgsim/wgsim -e 0.005 -1 150 -2 150 -d 278 -s 128 -r 0 -R 0 Sim_Pipeline/Plasmid2_l8500_c100/Plasmid2_l8500_c100-extended.fna Sim_Pipeline/Plasmid2_l8500_c100/Plasmid2_l8500_c100_R1.fastq Sim_Pipeline/Plasmid2_l8500_c100/Plasmid2_l8500_c100_R2.fastq
+| | File: Plasmid3_l8500_c100 | |
+/gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/src/pbsim --prefix Sim_Pipeline/Plasmid3_l8500_c100/Plasmid3_l8500_c100 --depth 100 --length-mean 8500 --length-sd 6516.61 --length-max 63750 --length-min 230  --accuracy-mean 0.88 --model_qc /gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/data/model_qc_clr Sim_Pipeline/Plasmid3_l8500_c100/Plasmid3_l8500_c100-extended.fna
+/gpfs/project/dilthey/software/wgsim/wgsim -e 0.005 -1 150 -2 150 -d 278 -s 128 -r 0 -R 0 Sim_Pipeline/Plasmid3_l8500_c100/Plasmid3_l8500_c100-extended.fna Sim_Pipeline/Plasmid3_l8500_c100/Plasmid3_l8500_c100_R1.fastq Sim_Pipeline/Plasmid3_l8500_c100/Plasmid3_l8500_c100_R2.fastq
+
+____________________________________________________________________________________________________
+Pipeline Parameters: 4.7.2019, 13:55:32
+____________________________________________________________________________________________________
+
+Output Pathway:	Sim_Pipeline/[FILE]/
+Simulated Reads:	[FILE]_0001.fastq or .maf or .ref (PacBio), [FILE]_R1.fastq or R2 (Illumina)
+Filtered Reads:	[FILE]-filtered_0001.fastq or .maf or .ref (PacBio), [FILE]-filtered_R1.fastq & [FILE]-filtered_R2.fastq or R2 (Illumina)
+| | File: Plasmid1_l8500_c100 | |
+/gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/src/pbsim --prefix Sim_Pipeline/Plasmid1_l8500_c100/Plasmid1_l8500_c100 --depth 100 --length-mean 8500 --length-sd 6516.61 --length-max 63750 --length-min 230  --accuracy-mean 0.88 --model_qc /gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/data/model_qc_clr Sim_Pipeline/Plasmid1_l8500_c100/Plasmid1_l8500_c100-extended.fna
+/gpfs/project/dilthey/software/wgsim/wgsim -e 0.005 -1 150 -2 150 -d 278 -s 128 -r 0 -R 0 Sim_Pipeline/Plasmid1_l8500_c100/Plasmid1_l8500_c100-extended.fna Sim_Pipeline/Plasmid1_l8500_c100/Plasmid1_l8500_c100_R1.fastq Sim_Pipeline/Plasmid1_l8500_c100/Plasmid1_l8500_c100_R2.fastq
+| | File: Plasmid2_l8500_c100 | |
+/gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/src/pbsim --prefix Sim_Pipeline/Plasmid2_l8500_c100/Plasmid2_l8500_c100 --depth 100 --length-mean 8500 --length-sd 6516.61 --length-max 63750 --length-min 230  --accuracy-mean 0.88 --model_qc /gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/data/model_qc_clr Sim_Pipeline/Plasmid2_l8500_c100/Plasmid2_l8500_c100-extended.fna
+/gpfs/project/dilthey/software/wgsim/wgsim -e 0.005 -1 150 -2 150 -d 278 -s 128 -r 0 -R 0 Sim_Pipeline/Plasmid2_l8500_c100/Plasmid2_l8500_c100-extended.fna Sim_Pipeline/Plasmid2_l8500_c100/Plasmid2_l8500_c100_R1.fastq Sim_Pipeline/Plasmid2_l8500_c100/Plasmid2_l8500_c100_R2.fastq
+| | File: Plasmid3_l8500_c100 | |
+/gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/src/pbsim --prefix Sim_Pipeline/Plasmid3_l8500_c100/Plasmid3_l8500_c100 --depth 100 --length-mean 8500 --length-sd 6516.61 --length-max 63750 --length-min 230  --accuracy-mean 0.88 --model_qc /gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/data/model_qc_clr Sim_Pipeline/Plasmid3_l8500_c100/Plasmid3_l8500_c100-extended.fna
+/gpfs/project/dilthey/software/wgsim/wgsim -e 0.005 -1 150 -2 150 -d 278 -s 128 -r 0 -R 0 Sim_Pipeline/Plasmid3_l8500_c100/Plasmid3_l8500_c100-extended.fna Sim_Pipeline/Plasmid3_l8500_c100/Plasmid3_l8500_c100_R1.fastq Sim_Pipeline/Plasmid3_l8500_c100/Plasmid3_l8500_c100_R2.fastq
+
+____________________________________________________________________________________________________
+Pipeline Parameters: 4.7.2019, 14:7:48
+____________________________________________________________________________________________________
+
+Output Pathway:	Sim_Pipeline/[FILE]/
+Simulated Reads:	[FILE]_0001.fastq or .maf or .ref (PacBio), [FILE]_R1.fastq or R2 (Illumina)
+Filtered Reads:	[FILE]-filtered_0001.fastq or .maf or .ref (PacBio), [FILE]-filtered_R1.fastq & [FILE]-filtered_R2.fastq or R2 (Illumina)
+| | File: Genome1_l8500_c100 | |
+/gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/src/pbsim --prefix Sim_Pipeline/Genome1_l8500_c100/Genome1_l8500_c100 --depth 100 --length-mean 8500 --length-sd 6516.61 --length-max 63750 --length-min 230  --accuracy-mean 0.88 --model_qc /gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/data/model_qc_clr Sim_Pipeline/Genome1_l8500_c100/Genome1_l8500_c100-extended.fna
+/gpfs/project/dilthey/software/wgsim/wgsim -e 0.005 -1 150 -2 150 -d 278 -s 128 -r 0 -R 0 Sim_Pipeline/Genome1_l8500_c100/Genome1_l8500_c100-extended.fna Sim_Pipeline/Genome1_l8500_c100/Genome1_l8500_c100_R1.fastq Sim_Pipeline/Genome1_l8500_c100/Genome1_l8500_c100_R2.fastq
+| | File: Genome2_l8500_c100 | |
+/gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/src/pbsim --prefix Sim_Pipeline/Genome2_l8500_c100/Genome2_l8500_c100 --depth 100 --length-mean 8500 --length-sd 6516.61 --length-max 63750 --length-min 230  --accuracy-mean 0.88 --model_qc /gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/data/model_qc_clr Sim_Pipeline/Genome2_l8500_c100/Genome2_l8500_c100-extended.fna
+/gpfs/project/dilthey/software/wgsim/wgsim -e 0.005 -1 150 -2 150 -d 278 -s 128 -r 0 -R 0 Sim_Pipeline/Genome2_l8500_c100/Genome2_l8500_c100-extended.fna Sim_Pipeline/Genome2_l8500_c100/Genome2_l8500_c100_R1.fastq Sim_Pipeline/Genome2_l8500_c100/Genome2_l8500_c100_R2.fastq
+| | File: Genome3_l8500_c100 | |
+/gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/src/pbsim --prefix Sim_Pipeline/Genome3_l8500_c100/Genome3_l8500_c100 --depth 100 --length-mean 8500 --length-sd 6516.61 --length-max 63750 --length-min 230  --accuracy-mean 0.88 --model_qc /gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/data/model_qc_clr Sim_Pipeline/Genome3_l8500_c100/Genome3_l8500_c100-extended.fna
+/gpfs/project/dilthey/software/wgsim/wgsim -e 0.005 -1 150 -2 150 -d 278 -s 128 -r 0 -R 0 Sim_Pipeline/Genome3_l8500_c100/Genome3_l8500_c100-extended.fna Sim_Pipeline/Genome3_l8500_c100/Genome3_l8500_c100_R1.fastq Sim_Pipeline/Genome3_l8500_c100/Genome3_l8500_c100_R2.fastq
+
+____________________________________________________________________________________________________
+Pipeline Parameters: 5.7.2019, 12:56:53
+____________________________________________________________________________________________________
+
+Output Pathway:	Sim_Pipeline/[FILE]/
+Simulated Reads:	[FILE]_0001.fastq or .maf or .ref (PacBio), [FILE]_R1.fastq or R2 (Illumina)
+Filtered Reads:	[FILE]-filtered_0001.fastq or .maf or .ref (PacBio), [FILE]-filtered_R1.fastq & [FILE]-filtered_R2.fastq or R2 (Illumina)
+| | File: Plasmid1_l8500_c150 | |
+/gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/src/pbsim --prefix Sim_Pipeline/Plasmid1_l8500_c150/Plasmid1_l8500_c150 --depth 150 --length-mean 8500 --length-sd 6516.61 --length-max 63750 --length-min 230  --accuracy-mean 0.88 --model_qc /gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/data/model_qc_clr Sim_Pipeline/Plasmid1_l8500_c150/Plasmid1_l8500_c150-extended.fna
+/gpfs/project/dilthey/software/wgsim/wgsim -e 0.005 -1 150 -2 150 -d 278 -s 128 -r 0 -R 0 Sim_Pipeline/Plasmid1_l8500_c150/Plasmid1_l8500_c150-extended.fna Sim_Pipeline/Plasmid1_l8500_c150/Plasmid1_l8500_c150_R1.fastq Sim_Pipeline/Plasmid1_l8500_c150/Plasmid1_l8500_c150_R2.fastq
+| | File: Plasmid2_l8500_c150 | |
+/gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/src/pbsim --prefix Sim_Pipeline/Plasmid2_l8500_c150/Plasmid2_l8500_c150 --depth 150 --length-mean 8500 --length-sd 6516.61 --length-max 63750 --length-min 230  --accuracy-mean 0.88 --model_qc /gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/data/model_qc_clr Sim_Pipeline/Plasmid2_l8500_c150/Plasmid2_l8500_c150-extended.fna
+/gpfs/project/dilthey/software/wgsim/wgsim -e 0.005 -1 150 -2 150 -d 278 -s 128 -r 0 -R 0 Sim_Pipeline/Plasmid2_l8500_c150/Plasmid2_l8500_c150-extended.fna Sim_Pipeline/Plasmid2_l8500_c150/Plasmid2_l8500_c150_R1.fastq Sim_Pipeline/Plasmid2_l8500_c150/Plasmid2_l8500_c150_R2.fastq
+| | File: Plasmid3_l8500_c150 | |
+/gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/src/pbsim --prefix Sim_Pipeline/Plasmid3_l8500_c150/Plasmid3_l8500_c150 --depth 150 --length-mean 8500 --length-sd 6516.61 --length-max 63750 --length-min 230  --accuracy-mean 0.88 --model_qc /gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/data/model_qc_clr Sim_Pipeline/Plasmid3_l8500_c150/Plasmid3_l8500_c150-extended.fna
+/gpfs/project/dilthey/software/wgsim/wgsim -e 0.005 -1 150 -2 150 -d 278 -s 128 -r 0 -R 0 Sim_Pipeline/Plasmid3_l8500_c150/Plasmid3_l8500_c150-extended.fna Sim_Pipeline/Plasmid3_l8500_c150/Plasmid3_l8500_c150_R1.fastq Sim_Pipeline/Plasmid3_l8500_c150/Plasmid3_l8500_c150_R2.fastq
+
+____________________________________________________________________________________________________
+Pipeline Parameters: 5.7.2019, 14:2:55
+____________________________________________________________________________________________________
+
+Output Pathway:	Sim_Pipeline/[FILE]/
+Simulated Reads:	[FILE]_0001.fastq or .maf or .ref (PacBio), [FILE]_R1.fastq or R2 (Illumina)
+Filtered Reads:	[FILE]-filtered_0001.fastq or .maf or .ref (PacBio), [FILE]-filtered_R1.fastq & [FILE]-filtered_R2.fastq or R2 (Illumina)
+| | File: Genome1_l8500_c150 | |
+/gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/src/pbsim --prefix Sim_Pipeline/Genome1_l8500_c150/Genome1_l8500_c150 --depth 150 --length-mean 8500 --length-sd 6516.61 --length-max 63750 --length-min 230  --accuracy-mean 0.88 --model_qc /gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/data/model_qc_clr Sim_Pipeline/Genome1_l8500_c150/Genome1_l8500_c150-extended.fna
+/gpfs/project/dilthey/software/wgsim/wgsim -e 0.005 -1 150 -2 150 -d 278 -s 128 -r 0 -R 0 Sim_Pipeline/Genome1_l8500_c150/Genome1_l8500_c150-extended.fna Sim_Pipeline/Genome1_l8500_c150/Genome1_l8500_c150_R1.fastq Sim_Pipeline/Genome1_l8500_c150/Genome1_l8500_c150_R2.fastq
+
+____________________________________________________________________________________________________
+Pipeline Parameters: 5.7.2019, 14:3:17
+____________________________________________________________________________________________________
+
+Output Pathway:	Sim_Pipeline/[FILE]/
+Simulated Reads:	[FILE]_0001.fastq or .maf or .ref (PacBio), [FILE]_R1.fastq or R2 (Illumina)
+Filtered Reads:	[FILE]-filtered_0001.fastq or .maf or .ref (PacBio), [FILE]-filtered_R1.fastq & [FILE]-filtered_R2.fastq or R2 (Illumina)
+| | File: Genome1_l8500_c150 | |
+/gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/src/pbsim --prefix Sim_Pipeline/Genome1_l8500_c150/Genome1_l8500_c150 --depth 150 --length-mean 8500 --length-sd 6516.61 --length-max 63750 --length-min 230  --accuracy-mean 0.88 --model_qc /gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/data/model_qc_clr Sim_Pipeline/Genome1_l8500_c150/Genome1_l8500_c150-extended.fna
+/gpfs/project/dilthey/software/wgsim/wgsim -e 0.005 -1 150 -2 150 -d 278 -s 128 -r 0 -R 0 Sim_Pipeline/Genome1_l8500_c150/Genome1_l8500_c150-extended.fna Sim_Pipeline/Genome1_l8500_c150/Genome1_l8500_c150_R1.fastq Sim_Pipeline/Genome1_l8500_c150/Genome1_l8500_c150_R2.fastq
+| | File: Genome2_l8500_c150 | |
+/gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/src/pbsim --prefix Sim_Pipeline/Genome2_l8500_c150/Genome2_l8500_c150 --depth 150 --length-mean 8500 --length-sd 6516.61 --length-max 63750 --length-min 230  --accuracy-mean 0.88 --model_qc /gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/data/model_qc_clr Sim_Pipeline/Genome2_l8500_c150/Genome2_l8500_c150-extended.fna
+/gpfs/project/dilthey/software/wgsim/wgsim -e 0.005 -1 150 -2 150 -d 278 -s 128 -r 0 -R 0 Sim_Pipeline/Genome2_l8500_c150/Genome2_l8500_c150-extended.fna Sim_Pipeline/Genome2_l8500_c150/Genome2_l8500_c150_R1.fastq Sim_Pipeline/Genome2_l8500_c150/Genome2_l8500_c150_R2.fastq
+| | File: Genome3_l8500_c150 | |
+/gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/src/pbsim --prefix Sim_Pipeline/Genome3_l8500_c150/Genome3_l8500_c150 --depth 150 --length-mean 8500 --length-sd 6516.61 --length-max 63750 --length-min 230  --accuracy-mean 0.88 --model_qc /gpfs/project/dilthey/software/PBSIM-PacBio-Simulator/data/model_qc_clr Sim_Pipeline/Genome3_l8500_c150/Genome3_l8500_c150-extended.fna
+/gpfs/project/dilthey/software/wgsim/wgsim -e 0.005 -1 150 -2 150 -d 278 -s 128 -r 0 -R 0 Sim_Pipeline/Genome3_l8500_c150/Genome3_l8500_c150-extended.fna Sim_Pipeline/Genome3_l8500_c150/Genome3_l8500_c150_R1.fastq Sim_Pipeline/Genome3_l8500_c150/Genome3_l8500_c150_R2.fastq
