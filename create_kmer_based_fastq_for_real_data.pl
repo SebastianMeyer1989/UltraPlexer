@@ -34,21 +34,24 @@ while($line2=<INTWO>){									# parse read pool
 		$head=$line2;			# save header
 	}
 	if(($line2=~m/^@/) && (exists($called_kmers{$head}))){					# if line is a header and read exists in called kmers
-		push(@files, "$called_kmers{$head}");							# save id
-		open(TMP1,">>","$prefix-$called_kmers{$head}-predicted_reads.fastq");	# Output File: Different fastq files, Predictions, 2nd Column
+		if($called_kmers{$head} ne 'NA')
+		{
+			push(@files, "$called_kmers{$head}");							# save id
+			open(TMP1,">>","$prefix-$called_kmers{$head}-predicted_reads.fastq");	# Output File: Different fastq files, Predictions, 2nd Column
 
-		print TMP1 "$line2\n";		# write next 1/4 lines in prediction file (equal to 1 read)
+			print TMP1 "$line2\n";		# write next 1/4 lines in prediction file (equal to 1 read)
 
-		$line2=<INTWO>;			# read next line
-		print TMP1 "$line2";		# write next 2/4 lines in prediction file (equal to 1 read)
+			$line2=<INTWO>;			# read next line
+			print TMP1 "$line2";		# write next 2/4 lines in prediction file (equal to 1 read)
 
-		$line2=<INTWO>;			# read next line
-		print TMP1 "$line2";		# write next 3/4 lines in prediction file (equal to 1 read)
+			$line2=<INTWO>;			# read next line
+			print TMP1 "$line2";		# write next 3/4 lines in prediction file (equal to 1 read)
 
-		$line2=<INTWO>;			# read next line
-		print TMP1 "$line2";		# write next 4/4 lines in prediction file (equal to 1 read)
+			$line2=<INTWO>;			# read next line
+			print TMP1 "$line2";		# write next 4/4 lines in prediction file (equal to 1 read)
 
-		close(TMP1);	
+			close(TMP1);	
+		}
 
 	}
 	elsif(($line2=~m/^@/) && (!exists($called_kmers{$head}))){		# if line is a header and read does NOT exist in called kmers

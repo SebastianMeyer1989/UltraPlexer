@@ -40,6 +40,7 @@ my $classificationSource_forCallFile = 'kmers';
 my $testDataFromSimulation;
 my $testDataFromRealBarcodedRun;
 my $longReads_FASTQ;
+my $ignoreAmbiguousReads;
 GetOptions ( 
 	'action:s' => \$action,
 	'samples_file:s' => \$samples_file,
@@ -52,6 +53,7 @@ GetOptions (
 	'testDataFromSimulation:s' => \$testDataFromSimulation,
 	'testDataFromRealBarcodedRun:s' => \$testDataFromRealBarcodedRun,
 	'longReads_FASTQ:s' => \$longReads_FASTQ,
+	'ignoreAmbiguousReads:s' => \$ignoreAmbiguousReads,
 );
 
 die "Please use --k <= 31" unless($k <= 31);
@@ -126,6 +128,7 @@ if($action eq 'classifyTestData')
 			($testDataFromSimulation ? $sampleI : undef),
 			($testDataFromRealBarcodedRun ? $sampleI : undef),
 			$readIDs_href,
+			$ignoreAmbiguousReads,
 		);
 	}
 	close($fh_output);
@@ -190,6 +193,7 @@ elsif($action eq 'classify')
 		undef,
 		undef,
 		$readIDs_href,
+		$ignoreAmbiguousReads
 	);
 	close($fh_output);
 
@@ -247,7 +251,7 @@ elsif($action eq 'generateCallFile')
 		my $maximumEstimatedIdentity = $line{maximumEstimatedIdentity};
 		die unless(defined $maximumEstimatedIdentity);
 		
-		my $call = callDistribution(\@callDistribution);
+		my $call = callDistribution(\@callDistribution, $ignoreAmbiguousReads);
 		my $classification = $sampleIDs[$call];
 			
 		print OUT join("\t", $readID, $classification, $maximumEstimatedIdentity), "\n";
@@ -376,7 +380,7 @@ elsif($action eq 'evaluate')
 		my $callis_1 = 0;
 		foreach my $readID (keys %{$readClassification_distribution{$classificationSource}})
 		{
-			my $call = callDistribution($readClassification_distribution{$classificationSource}{$readID});
+			my $call = callDistribution($readClassification_distribution{$classificationSource}{$readID}, $ignoreAmbiguousReads);
 			# print Dumper($readClassification_distribution{$classificationSource}{$readID}, $call); # todo
 			$readClassification_calls{$classificationSource}{$readID} = $sampleIDs[$call];
 			# if($call == 0)
@@ -729,10 +733,24 @@ sub readReadTruthFromSimulationOrBarcodes
 sub callDistribution
 {
 	my $distribution_aref = shift;
+	my $ignoreAmbiguousReads = shift;
+	
 	my $distr_cum = 0;
+	my $distr_max;
 	for(my $i = 0; $i <= $#{$distribution_aref}; $i++)
 	{
 		$distr_cum += $distribution_aref->[$i];
+		if((not defined $distr_max) or ($distr_max < $distribution_aref->[$i]))
+		{
+			$distr_max = $distribution_aref->[$i];
+		}
+	}
+	die unless(defined $distr_max);
+	my @distr_elements_with_max = grep {$_ == $distr_max} @$distribution_aref;
+	
+	if($ignoreAmbiguousReads and (scalar(@distr_elements_with_max) > 1))
+	{
+		return 'NA';
 	}
 	die Dumper("Invalid distribution", $distribution_aref, $distr_cum) unless(abs(1 - $distr_cum) <= 1e-6);
 	my $v = rand(1);
@@ -831,7 +849,9 @@ sub classifyLongReads
 	my $truthColour_fromSimulation = shift;
 	my $truthColour_fromBarcodes = shift;
 	my $seenReadIDs_href = shift;
+	my $classifyLongReads = shift;
 	die unless(defined $seenReadIDs_href);
+	die unless(defined $classifyLongReads);
 	
 	$truthColour_fromSimulation = 'NA' unless(defined $truthColour_fromSimulation);
 	$truthColour_fromBarcodes = 'NA' unless(defined $truthColour_fromBarcodes);
