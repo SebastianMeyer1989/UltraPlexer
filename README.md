@@ -10,11 +10,24 @@ To apply the UltraPlexing approach, simply pool equal amounts of DNA from the sa
 A preprint with accuracy evaluations will be made available soon.
 
 ## Program Requirements and Installation
+The programm was tested on the following Operating System: CentOS Linux release 7.5.1804 (Core).
+
 ### The following programming languages and packages need to be installed:
 
-- Perl
 - R
 - [cortex_var](http://cortexassembler.sourceforge.net/index_cortex_var.html)
+- Perl
+- Perl Modules:
+  - Data::Dumper
+  - List::Util qw/max sum shuffle/
+  - List::MoreUtils qw/mesh all uniq/
+  - Getopt::Long
+  - File::Path qw(make_path remove_tree)
+  - FindBin
+  - lib "$FindBin::Bin/perlLib"
+  - Cwd qw/getcwd abs_path/
+  - Math::GSL::Randist qw/gsl_ran_binomial_pdf/
+  - Time::localtime
 
 Please modify `UltraPlexer.pl` so that it contains the correct path to your installation of Cortex (line 16). The algorithm expects to find Cortex binaries for k = 31 with 20, 40 and 60 colors.
 
