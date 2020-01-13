@@ -18,8 +18,8 @@ The programm was tested on the following Operating System: CentOS Linux release 
 - [cortex_var](http://cortexassembler.sourceforge.net/index_cortex_var.html)
 - Perl
 - Perl Modules:
-  - List::MoreUtils qw/mesh all uniq/
-  - Math::GSL::Randist qw/gsl_ran_binomial_pdf/
+  - List::MoreUtils
+  - Math::GSL::Randist
 
 Please modify `UltraPlexer.pl` so that it contains the correct path to your installation of Cortex (line 16). The algorithm expects to find Cortex binaries for k = 31 with 20, 40 and 60 colors.
 
