@@ -40,7 +40,7 @@ my $classificationSource_forCallFile = 'kmers';
 my $testDataFromSimulation;
 my $testDataFromRealBarcodedRun;
 my $longReads_FASTQ;
-my $ignoreAmbiguousReads;
+my $ignoreAmbiguousReads = 0;
 GetOptions ( 
 	'action:s' => \$action,
 	'samples_file:s' => \$samples_file,
