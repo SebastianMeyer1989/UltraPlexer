@@ -10,7 +10,9 @@ To apply the UltraPlexing approach, simply pool equal amounts of DNA from the sa
 A preprint with accuracy evaluations will be made available soon.
 
 ## Program Requirements and Installation
-The programm was tested on the following Operating System: CentOS Linux release 7.5.1804 (Core).
+The programm was tested on the following Operating Systems:
+- CentOS Linux release 7.5.1804 (Core)
+- Ubuntu 18.04.3 LTS
 
 ### The following programming languages and packages need to be installed:
 
@@ -23,7 +25,21 @@ The programm was tested on the following Operating System: CentOS Linux release 
 
 Please modify `UltraPlexer.pl` so that it contains the correct path to your installation of Cortex (line 16). The algorithm expects to find Cortex binaries for k = 31 with 20, 40 and 60 colors.
 
+### Alternative to installing prerequisites:
+
+We generated and tested a Docker image, containing the OS "Ubuntu 18.04", the above mentionen prerequisites and all data, provided in this GitHub repository. Instead of installing all required programming languages and packages yourself, you should be able to run the Ultraplexer algorithm in a container, created by this Docker image.
+
+You can find the docker image at: https://hub.docker.com/r/diltheygenomicslab/ultraplexer
+
 ## Running the UltraPlexer
+
+Known issue: If the Ultraplexing run produces an an error like
+
+`could not allocate hash table of size 209715200`
+
+`Error: Giving up - unable to allocate memory for the hash table`
+
+and subsequently stops due to not finding a certain file, pls try to add the option "`--allSamples_cortex_height 20`" to the first Utraplexer call. This error occurs, if the algorithm can not allocate the memory needed (by estimation), to store all calculated data. The before mentioned option reduces the memory allocated by the UltraPlexer, which in most cases solves the problem.
 
 ### 1. Classify long-reads:
 ```
@@ -38,7 +54,7 @@ perl UltraPlexer.pl --prefix prefix1 --action generateCallFile --samples_file /p
 perl UltraPlexer.pl --prefix prefix1 --action generateCallFile --samples_file /path/to/samplefile/samplefile1.txt --classificationSource random
 ```
 
-## Input
+### Input
 
 **perl UltraPlexer.pl**
 
@@ -73,7 +89,7 @@ A FASTQ file containing the long reads to be classified.
 
 The command to generate a random assignment of long reads to isolates (useful for benchmarking).
 
-## Output
+### Output
 
 (examplary for prefix `mixed_bacteria_10x`):
 
@@ -151,7 +167,7 @@ Therefor you need to download the zip-file "`Example1_simulated_example_data.zip
 
 https://uni-duesseldorf.sciebo.de/s/oHFl3FCArhPhHb5
 
-and copy the content of the unzipped Folder "`Example1_simulated_example_data`" (Sim_Pipeline, example1_plasmid_ids_and_pathways.txt, example1_plasmid_read_pool.fastq and example1_plasmid_stats.txt) into your Folder "`Example1`" and continue the pipeline from step 3. "Ultraplexing:...".
+and copy the content of the unzipped Folder "`Example1_simulated_example_data`" (Sim_Pipeline, example1_plasmid_ids_and_pathways.txt, example1_plasmid_read_pool.fastq and example1_plasmid_stats.txt) into your Folder "`Example1`". Before continuing the pipeline from step 3. "Ultraplexing:..." you need to open "`example1_plasmid_ids_and_pathways.txt`" and change the absolute pathways of the simulated short-read files (contained in the folder "`Sim_Pipeline`"), to the the pathways fitting your storage location.
 
 ### 1. Simulation (59s runtime, 1 CPUs, <1gb used memory)
 
