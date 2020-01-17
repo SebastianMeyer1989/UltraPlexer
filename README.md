@@ -29,7 +29,11 @@ Please modify `UltraPlexer.pl` so that it contains the correct path to your inst
 
 We generated and tested a Docker image, containing the OS "Ubuntu 18.04", the above mentionen prerequisites and all data, provided in this GitHub repository. Instead of installing all required programming languages and packages yourself, you should be able to run the Ultraplexer algorithm in a container, created by this Docker image.
 
-You can find the docker image at: https://hub.docker.com/r/diltheygenomicslab/ultraplexer
+The docker image can be found at: https://hub.docker.com/r/diltheygenomicslab/ultraplexer
+
+Use the command `docker pull diltheygenomicslab/ultraplexer:0.1.2` to get the current version.
+
+The Dockerfile to this image can be found at: https://osf.io/4m9vh/
 
 ## Running the UltraPlexer
 
