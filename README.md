@@ -60,23 +60,15 @@ perl UltraPlexer.pl --prefix prefix1 --action generateCallFile --samples_file /p
 
 ### Input
 
-**perl UltraPlexer.pl**
+**perl UltraPlexer.pl** - The UltraPlexing algorithm.
 
-The UltraPlexing algorithm.
+**--prefix prefix1** - Your chosen prefix for the UltraPlexer run.
 
-**--prefix prefix1**
+**--action classify / generateCallFile** - The command to classify the long-reads (`classify`) or to generate an output file from the classified data (`generateCallFile`).
 
-Your chosen prefix for the UltraPlexer run.
+**--samples_file /path/to/samplefile/samplefile1.txt** - A tab-separated file containing the isolate ID, the path to the illumina_R1.fastq file, and the path to the illumina_R2.fastq file. One line per isolate.
 
-**--action classify / generateCallFile**
-
-The command to classify the long-reads (`classify`) or to generate an output file from the classified data (`generateCallFile`).
-
-**--samples_file /path/to/samplefile/samplefile1.txt**
-
-A tab-separated file containing the isolate ID, the path to the illumina_R1.fastq file, and the path to the illumina_R2.fastq file. One line per isolate.
-
-#### Example:
+##### Example:
 ```
 Isolate_1	/Data/isolate_1_R1.fastq	/Data/isolate_1_R2.fastq
 Isolate_17	/Data/isolate_17_R1.fastq	/Data/isolate_17_R2.fastq
@@ -109,7 +101,7 @@ This file is produced by the `classify` command and contains intermediate read c
 
 This file is produced by the `generateCallFile` command and contains, for each read, the isolate it has been assigned to, and a quality metric.
 
-#### Example: 
+##### Example: 
 ```
 Read_1	        MRSA_H4         0.886902934417435
 Read_332	Isolate_1	0.906668691485839
@@ -118,9 +110,7 @@ Read_4100	Isolate_1	0.912532884787109
 …
 ```
 
-**mixed_bacteria_10x.classification_k19.called_random**
-
-This file is produced when specifying the `--classificationSource random` option. It contains a random allocation of reads to isolates.
+**mixed_bacteria_10x.classification_k19.called_random** - This file is produced when specifying the `--classificationSource random` option. It contains a random allocation of reads to isolates.
 
 ## Creating fastq-files for further hybrid assemblies
 
@@ -133,27 +123,17 @@ perl create_kmer_based_fastq_for_real_data.pl mixed_bacteria_10x.classification_
 
 ### Input:
 
-**perl create_kmer_based_fastq_for_real_data.pl**
+**perl create_kmer_based_fastq_for_real_data.pl** - The script that produces fastq files from the calling table.
 
-The script that produces fastq files from the calling table.
+**mixed_bacteria_10x.classification_k19.called_kmers** - The calling table from the UltraPlexer run.
 
-**mixed_bacteria_10x.classification_k19.called_kmers**
+**path/to/longreads/longreads1.fastq** - The used long-read file.
 
-The calling table from the UltraPlexer run.
-
-**path/to/longreads/longreads1.fastq**
-
-The used long-read file.
-
-**mixed_bacteria_10x**
-
-Prefix for the run.
+**mixed_bacteria_10x** - Prefix for the run.
 
 ### Output:
 
-**mixed_bacteria_10x-isolate1-predicted_reads.fastq**
-
-A fastq file named after the run (mixed_bacteria_10x) and the isolate ID (isolate1), ending with “predicted_reads.fastq”.
+**mixed_bacteria_10x-isolate1-predicted_reads.fastq** - A fastq file named after the run (mixed_bacteria_10x) and the isolate ID (isolate1), ending with “predicted_reads.fastq”.
 
 ## Example Run
 
