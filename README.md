@@ -77,29 +77,19 @@ Benjamin	/Data/Benjamin_R1.fastq	        /Data/Benjamin_R2.fastq
 …
 ```
 
-**--longReads_FASTQ /path/to/longreads/longreads1.fastq**
+**--longReads_FASTQ /path/to/longreads/longreads1.fastq** - A FASTQ file containing the long reads to be classified.
 
-A FASTQ file containing the long reads to be classified.
-
-**--classificationSource random**
-
-The command to generate a random assignment of long reads to isolates (useful for benchmarking).
+**--classificationSource random** - The command to generate a random assignment of long reads to isolates (useful for benchmarking).
 
 ### Output
 
 (examplary for prefix `mixed_bacteria_10x`):
 
-**mixed_bacteria_10x.classification_k19.done**
+**mixed_bacteria_10x.classification_k19.done** - This flag file is produced when the UltraPlexer finished running correctly.
 
-This flag file is produced when the UltraPlexer finished running correctly.
+**mixed_bacteria_10x.classification_k19** - This file is produced by the `classify` command and contains intermediate read classification data.
 
-**mixed_bacteria_10x.classification_k19**
-
-This file is produced by the `classify` command and contains intermediate read classification data.
-
-**mixed_bacteria_10x.classification_k19.called_kmers**
-
-This file is produced by the `generateCallFile` command and contains, for each read, the isolate it has been assigned to, and a quality metric.
+**mixed_bacteria_10x.classification_k19.called_kmers** - This file is produced by the `generateCallFile` command and contains, for each read, the isolate it has been assigned to, and a quality metric.
 
 ##### Example: 
 ```
