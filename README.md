@@ -7,7 +7,12 @@ UltraPlexing is a highly effective method for multiplexed long-read sequencing i
 
 To apply the UltraPlexing approach, simply pool equal amounts of DNA from the samples you want to multiplex, generate long-read sequencing data, and use the UltraPlexing algorithm to demultiplex the data. In order to apply UltraPlexing, short-read sequencing data for the same samples needs to be available at the time of analysis. If possible, optimize the DNA extration and library preparation processes for read length, as the ability of the UltraPlexing algorithm to assign long reads to isolates improves with increasing read lengths.
 
-A preprint with accuracy evaluations will be made available soon.
+A preprint with accuracy evaluations can be fount at: https://www.biorxiv.org/content/10.1101/680827v2
+
+### Overview of the Ultraplexing approach
+![alt text](https://github.com/SebastianMeyer1989/UltraPlexer/blob/master/Workflow.jpg)
+
+Long reads are generated in simple pooled sequencing runs. The Ultraplexing algorithm determines the most likely source genome for each long read by carrying out a comparison between the read and the de Bruijn graphs of the sequenced sample genomes, inferred from short-read data. Hybrid assembly of sample-specific long and short reads enables the recovery of complete bacterial genomes.
 
 ## Program Requirements and Installation
 The programm was tested on the following Operating Systems:
